@@ -1,0 +1,32 @@
+<div class="container" id="register-card">
+  <mat-card class="p-5">
+    <mat-card-title>Register</mat-card-title>
+    <mat-card-subtitle>Access all the user data!</mat-card-subtitle>
+  
+    <form #registerForm="ngForm" [ngFormOptions]="{updateOn: 'blur'}" ngSubmit="registerUser(registerForm)" action="" validate>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput type="text" name="username" required autocomplete="off" ngModel>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" name="name" required autocomplete="off" ngModel>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput type="email" name="email" autocomplete="off" ngModel>
+        </mat-form-field>
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput type="number" name="age" autocomplete="off" ngModel>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Create password</mat-label>
+        <input matInput type="password" name="password" required autocomplete="off" ngModel>
+      </mat-form-field>
+      <br>
+        <button mat-raised-button color="primary" class="mb-2" (click)="registerUser(registerForm)">Register</button>
+    </form>
+
+  </mat-card>
+</div>

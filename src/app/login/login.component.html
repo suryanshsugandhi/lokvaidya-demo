@@ -1,0 +1,26 @@
+<div class="container" id="login-card">
+  <mat-card class="p-5">
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-subtitle>Access all the user data!</mat-card-subtitle>
+    <p class="hidden" id="error-text">This is error text</p>
+    <form #loginForm="ngForm" ngSubmit="loginUser(loginForm)" action="">
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput type="text" name="username" required autocomplete="off" ngModel>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" name="password" required autocomplete="off" ngModel>
+      </mat-form-field>
+      <br>
+      <mat-card-actions>
+          <button mat-raised-button color="" class="mb-2" (click)="loginUser(loginForm)">Login</button>
+          <button mat-raised-button color="primary" (click) = "signUp()">New user? Signup!</button>
+      </mat-card-actions>
+        
+
+    </form>
+
+
+  </mat-card>
+</div>

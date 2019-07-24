@@ -1,0 +1,76 @@
+<div class="row mt-3">
+  <div class="col-4" id="user-list">
+    <div>
+      <div class="mat-caption">Logged in as: {{userName}}</div>
+      <button mat-raised-button color="primary" (click)="logOut()" class="mb-4 mt-2">
+          Logout
+         </button>
+      <div class="mat-title ">Registered users:</div>
+      <!-- <button mat-raised-button color="accent" (click)="changeNewUserStatus()">
+        <mat-icon>add</mat-icon> Add User
+      </button> -->
+      
+    </div>
+    <mat-action-list class="md-padding mt-2">
+      <mat-list-item *ngFor="let user of users" (click)="selectUser(user)" [ngClass]="{selected: isActive(user)}">
+        <!-- <mat-icon matListIcon>how_to_reg</mat-icon> -->
+        <h3 matLine>{{user.name}}</h3>
+        <p class="mat-body" matLine>@{{user.username}}</p>
+        <mat-divider></mat-divider>
+
+      </mat-list-item>
+
+    </mat-action-list>
+  </div>
+  <!-- <div *ngIf="!detailsPanel" class="col-8 text-center">
+    <mat-card style="height: 50vh">
+        <p class="mat-caption text-center">Select a user to update or delete credentials</p>
+    
+    </mat-card>
+  </div> -->
+  <div *ngIf="detailsPanel" class="col-8">
+    <mat-card>
+      <mat-card-title-group>
+        <mat-card-title>Edit user details</mat-card-title>
+        
+        <mat-card-subtitle>Update or delete existing user</mat-card-subtitle>
+        <mat-card-actions>
+            <mat-icon (click)="resetEditor()">clear</mat-icon>
+            <!-- <button mat-raised-button (click)="resetEditor()" color=""></button> -->
+
+        </mat-card-actions>
+
+
+      </mat-card-title-group>
+      <mat-card-content>
+        <p class="mat-body">User ID: {{selectedUser._id}}</p>
+        <p class="mat-body">Username: {{selectedUser.username}}</p>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput  type="text" [(ngModel)]="selectedUser.name" autocomplete="off" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+
+          <input matInput matLine  type="text" [(ngModel)]="selectedUser.email" autocomplete="off">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field matLine>
+          <mat-label>Age</mat-label>
+
+          <input matInput  type="text" [(ngModel)]="selectedUser.age" autocomplete="off">
+        </mat-form-field>
+        <br>
+
+        <mat-card-actions>
+          <!-- <button mat-button (click)="closeEditor()">Submit</button> -->
+          <button mat-raised-button (click)="saveUser(selectedUser)" color="primary"><mat-icon>save</mat-icon> Save</button>
+          <button mat-raised-button (click)="deleteUser(selectedUser)" color="accent"><mat-icon>delete</mat-icon> Delete</button>
+        </mat-card-actions>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+</div>

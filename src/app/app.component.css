@@ -1,0 +1,6 @@
+mat-toolbar{
+    top: 0;
+    justify-content: left;
+    align-items: end;
+    margin-bottom: 1vh;
+}
