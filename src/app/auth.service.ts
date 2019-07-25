@@ -7,8 +7,8 @@ import { Router } from '@angular/router'
   providedIn: 'root'
 })
 export class AuthService {
-  private _registerUrl = "http://localhost:3000/api/register"
-  private _loginUrl = "http://localhost:3000/api/login"
+  private _registerUrl = "https://serene-gorge-89634.herokuapp.com/api/register"
+  private _loginUrl = "https://serene-gorge-89634.herokuapp.com/api/login"
   userName = ""
   constructor(private http: HttpClient, private router: Router) { }
   httpOptions = {
