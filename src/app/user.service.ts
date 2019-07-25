@@ -8,9 +8,9 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UserService {
-  private usersURL = 'http://localhost:3000/api/fetchUsers';
-  private deleteURL = 'http://localhost:3000/api/delete';
-  private updateURL = 'http://localhost:3000/api/update';
+  private usersURL = 'https://serene-gorge-89634.herokuapp.com/api/fetchUsers';
+  private deleteURL = 'https://serene-gorge-89634.herokuapp.com/api/delete';
+  private updateURL = 'https://serene-gorge-89634.herokuapp.com/api/update';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
